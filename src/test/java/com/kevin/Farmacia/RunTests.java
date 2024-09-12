@@ -1,10 +1,10 @@
-package com.kevin.almacen;
+package com.kevin.Farmacia;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AlmacenApplicationTests {
+class RunTests {
 
 	@Test
 	void contextLoads() {

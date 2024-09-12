@@ -14,6 +14,8 @@ public class DetalleCompra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private int cantidad;
+    private double precio;
     @ManyToOne
     @JoinColumn (name = "compra_id", nullable = false)
     private Compra compra;
