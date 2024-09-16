@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
@@ -31,6 +32,9 @@ public class Cliente {
     private String email;
     @Pattern(regexp = "\\d{9}", message = "El numero de Celular tiene que tener exactamente 9 digitos")
     private String telefono;
+    @Size(min = 1, max = 1, message = "El campo esActivo debe tener un solo carácter")
+    @Pattern(regexp = "[01]", message = "El campo esActivo solo puede contener '0' o '1'")
+    private String esActivo;
     @OneToMany (mappedBy ="cliente")
     private Set<Venta> ventas;
 }

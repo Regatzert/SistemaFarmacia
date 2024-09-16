@@ -108,7 +108,7 @@ public class ClienteServiceTest {
         when(clienteRepository.findById(1L)).thenReturn(Optional.of(existingCliente));
         when(clienteRepository.save(any(Cliente.class))).thenReturn(existingCliente);
 
-        Cliente updatedCliente = clienteService.updaCliente(1L, updatedClienteDetails);
+        Cliente updatedCliente = clienteService.updateCliente(1L, updatedClienteDetails);
 
         assertNotNull(updatedCliente);
         assertEquals("Kevin Updated", updatedCliente.getNombre());

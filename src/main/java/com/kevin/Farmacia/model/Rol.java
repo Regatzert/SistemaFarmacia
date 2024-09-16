@@ -11,6 +11,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
@@ -22,6 +24,9 @@ public class Rol {
     @Column (unique = true)
     private String nombre;
     private String descripcion;
+    @Size(min = 1, max = 1, message = "El campo esActivo debe tener un solo carácter")
+    @Pattern(regexp = "[01]", message = "El campo esActivo solo puede contener '0' o '1'")
+    private String esActivo;
 
     @ManyToMany
     @JoinTable(

@@ -14,6 +14,7 @@ import jakarta.validation.Valid;
 
 @Service
 public class ClienteService {
+    
     @Autowired
     private ClienteRepository clienteRepository;
     
@@ -31,7 +32,7 @@ public class ClienteService {
     public void deleteById (Long id){
         clienteRepository.deleteById(id);
     }
-    public Cliente updaCliente(Long id, @Valid Cliente clienteDetalle){
+    public Cliente updateCliente(Long id, @Valid Cliente clienteDetalle){
         if (!clienteRepository.existsById(id)) {
             throw new ResourceNotFoundException("Cliente no encontrado con id: " + id);
         }

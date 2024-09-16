@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
@@ -18,4 +20,8 @@ public class Licencia {
     private String emisor;
     private String fechaEmision;
     private String fechaExpiracion;
+    
+    @Size(min = 1, max = 1, message = "El campo esActivo debe tener un solo carácter")
+    @Pattern(regexp = "[01]", message = "El campo esActivo solo puede contener '0' o '1'")
+    private String esActivo;
 }
