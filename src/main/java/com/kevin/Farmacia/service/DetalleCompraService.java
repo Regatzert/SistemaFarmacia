@@ -18,7 +18,7 @@ public class DetalleCompraService {
     @Autowired
     private DetalleCompraRepository detalleCompraRepository;
     
-    public DetalleCompra saveCliente(@Valid DetalleCompra detalleCompra){
+    public DetalleCompra saveDetalleCompra(@Valid DetalleCompra detalleCompra){
         return detalleCompraRepository.save(detalleCompra);
     }
 

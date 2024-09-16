@@ -18,7 +18,7 @@ public class CompraService {
     @Autowired
     private CompraRepository compraRepository;
     
-    public Compra saveCliente(@Valid Compra compra){
+    public Compra saveCompra(@Valid Compra compra){
         return compraRepository.save(compra);
     }
 
